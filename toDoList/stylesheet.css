@@ -1,5 +1,6 @@
 body{
   font-family: "Avenir Next";
+  width: 500px;
 }
 
 li{
@@ -32,9 +33,6 @@ title-icon{
 /*入力部分*/
 .submit{
   margin-bottom: 15px;
-}
-
-.submit{
   height: 50px;
 }
 
@@ -42,11 +40,12 @@ title-icon{
   float: left;
   width: 500px;
   margin-bottom: : 20px;
+  margin-top: 20px;
 }
 
 .submit-pin{
   float: left;
-width: 30px;
+  width: 30px;
   margin-left: 10px;
   margin-top: 5px;
   background: #dee7ec;
