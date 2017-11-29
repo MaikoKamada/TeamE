@@ -36,6 +36,12 @@ title-icon{
   height: 50px;
 }
 
+.submit:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .text{
   float: left;
   width: 500px;
