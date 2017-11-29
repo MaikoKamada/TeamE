@@ -1,12 +1,13 @@
 body{
   font-family: "Avenir Next";
+  width: 600px;
 }
 
 li{
   list-style: none;
 }
 
-/*タイトル部分*/
+/*タイトル部分 */
 .title{
   background-color: blue;
   color:#fff;
