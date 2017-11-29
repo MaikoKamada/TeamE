@@ -6,7 +6,7 @@ li{
   list-style: none;
 }
 
-/*タイトル部分
+/*タイトル部分*/
 .title{
   background-color: blue;
   color:#fff;
@@ -29,7 +29,7 @@ title-icon{
   height:64px;
   padding-top:30px;
 }
-/*入力部分
+/*入力部分*/
 .submit{
   margin-bottom: 15px;
 }
@@ -51,7 +51,7 @@ width: 30px;
   margin-top: 5px;
   background: #dee7ec;
 }
-/*リスト部分
+/*リスト部分*/
 .contents{
   height: 800px
   margin-top: 50px;
