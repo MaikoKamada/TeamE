@@ -1,12 +1,15 @@
 body{
+
   font-family: "ヒラギノ角ゴ ProN W3";
   width: 600px;
   float: center;
+
 }
 
 li{
   list-style: none;
 }
+
 
 #ToDoList{
   position: relative;
@@ -18,16 +21,21 @@ li{
   padding: 3% 5%;
   overflow: hidden;
 }
+
 /*タイトル部分 */
 .title{
   background-color: blue;
   color:#fff;
+
   height: 50px;
+
 }
 
 .title-logo{
   float: left;
+
   font-size: 20px;
+
   margin-top: 15px;
   margin-left: 20px;
 }
@@ -37,9 +45,11 @@ title-icon{
 .title-icon img{
   float: right;
   padding-right: 30px;
+
   width: 30px;
   height:30px;
   margin-top: 10px;
+
 }
 /*入力部分*/
 .submit{
@@ -55,22 +65,27 @@ title-icon{
 
 .text{
   float: left;
+
   width: 300px;
+
   margin-bottom: : 20px;
   margin-top: 20px;
 }
 
 .submit-pin{
   float: left;
+
   width: 40px;
   margin-left: 10px;
   margin-top: 20px;
+
   background: #dee7ec;
 }
 /*リスト部分*/
 .contents{
   height: 800px
   margin-top: 50px;
+
   border-bottom: solid #dee7ec;
 }
 #myUL{
@@ -91,5 +106,7 @@ title-icon{
 .contents li{
 
   font-size: 15px;
-  margin: 5px;
+
 }
+
+
