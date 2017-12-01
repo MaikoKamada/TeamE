@@ -1,22 +1,41 @@
 body{
-  font-family: "Avenir Next";
+
+  font-family: "ヒラギノ角ゴ ProN W3";
   width: 600px;
+  float: center;
+
 }
 
 li{
   list-style: none;
 }
 
+
+#ToDoList{
+  position: relative;
+  height: 600px;
+  width: 380px;
+  background: #FFF;
+  border: #4c66a4 solid 6px;
+  margin: 50px auto ;
+  padding: 3% 5%;
+  overflow: hidden;
+}
+
 /*タイトル部分 */
 .title{
   background-color: blue;
   color:#fff;
-  height: 120px;
+
+  height: 50px;
+
 }
 
 .title-logo{
   float: left;
-  font-size: 90px;
+
+  font-size: 20px;
+
   margin-top: 15px;
   margin-left: 20px;
 }
@@ -26,9 +45,11 @@ title-icon{
 .title-icon img{
   float: right;
   padding-right: 30px;
-  width: 64px;
-  height:64px;
-  padding-top:30px;
+
+  width: 30px;
+  height:30px;
+  margin-top: 10px;
+
 }
 /*入力部分*/
 .submit{
@@ -44,26 +65,48 @@ title-icon{
 
 .text{
   float: left;
-  width: 500px;
+
+  width: 300px;
+
   margin-bottom: : 20px;
   margin-top: 20px;
 }
 
 .submit-pin{
   float: left;
-  width: 30px;
+
+  width: 40px;
   margin-left: 10px;
-  margin-top: 5px;
+  margin-top: 20px;
+
   background: #dee7ec;
 }
 /*リスト部分*/
 .contents{
   height: 800px
   margin-top: 50px;
+
+  border-bottom: solid #dee7ec;
+}
+#myUL{
+  margin-bottom: 0px;
+  padding-left: 0px;
+
+}
+#checkbox{
+  height: 18px;
+  width: 18px;
+  float: right;
+}
+#deletebox{
+  height: 18px;
+  width: 18px;
+  float: right;
+}
+.contents li{
+
+  font-size: 15px;
+
 }
 
-.contents li{
-  border-bottom: 2px solid #dee7ec;
-  font-size: 12px;
-  margin: 5px;
-}
+
