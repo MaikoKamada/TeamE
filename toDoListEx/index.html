@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+
+<body>
+
+<div id="ToDoList">
+
+<!-- タイトル部分 -->
+<div class="title">
+  <div class="title-logo">行った場所リスト</div>
+  <div class="title-icon">
+  <img src="star.png" alt="">
+  </div>
+</div>
+
+<!-- 入力部分 -->
+<div class="submit">
+
+  <input id="place" type="text" placeholder="場所">
+  <textarea id="myInput"  maxlength="150">コメント(最大150字)</textarea>
+
+  <input onclick="newElement()" class="submit-pin" type="button" value="追加">
+
+</div>
+
+<!--入力が反映される部分 -->
+<div class="contents">
+  <div class="contentslist">
+    <ul id="postedplase">
+      竹下通り
+    </ul>
+    <ul id="myUL">
+    (例)ランチセットが安くて美味しい！また行きたい！
+    </ul>
+<!-- いいねボタン -->
+    <div class="i-ne">
+      <img id="heart" src="ecalic009_068.png"></img>
+      <ul id="counter">1</ul>
+    </div>
+  </div>
+</div>
+</div>
+
+
+</body>

@@ -1,0 +1,122 @@
+body{
+  font-family: "ヒラギノ角ゴ ProN W3";
+  width: 600px;
+  float: center;
+  color: #222222;
+}
+
+li{
+  list-style: none;
+}
+
+ul{
+  font-size: 12px;
+}
+
+#ToDoList{
+  position: relative;
+  height:1000px;
+  width: 380px;
+  background:#EEEEEE;
+  border: #4c66a4 solid 6px;
+  margin: 50px auto ;
+  padding: 3% 5%;
+  overflow: hidden;
+}
+/*タイトル部分 */
+.title{
+  background-color: #4c66a4;
+  color:#fff;
+  height: 50px;
+}
+
+.title-logo{
+  float: left;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+title-icon{
+  float:left;
+}
+.title-icon img{
+  float: right;
+  padding-right: 30px;
+  width: 30px;
+  height:30px;
+  margin-top: 10px;
+}
+/*入力部分*/
+.submit{
+  margin-bottom: 15px;
+  height: 100px;
+  border-bottom: solid  #4682B4;
+}
+
+.submit:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+textarea{
+  margin-top:10px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  font-size:10px;
+  border:1px solid #dee7ec;
+  float: left;
+}
+
+.submit-pin{
+  float: left;
+  width: 40px;
+  margin-left: 10px;
+  margin-top: 40px;
+  background: #dee7ec;
+}
+
+#place{
+  margin-top: 10px;
+  margin-right: 100px;
+}
+/*リスト部分*/
+.contents{
+  height: 800px
+  margin-top: 60px;
+}
+
+.contentslist{
+  height: 75px;
+  border-bottom:dotted;
+
+}
+#myUL{
+  height: 30px;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+#postedplase{
+  border-bottom:solid #888888 thin;
+  display: inline;
+  height: 15px;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+.i-ne{
+  float: right;
+  padding-right: 5px;
+}
+
+#heart{
+  width: 20px;
+  height: 20px;
+}
+
+#counter{
+  float: right;
+  padding-left: 0px;
+  margin: 0px;
+}
