@@ -1,74 +1,38 @@
 
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i=0; i<myNodelist.length; i++){
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-var close = document.getElementsByClassName("close");
-var i;
-for (i=0; i<close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-
-var list = document.querySelector("ul");
-list.addEventListener("click", function(ev) {
-  if (ev.target.tagName == "LI") {
-    ev.target.classList.toggle("checked");
-  }
-}, false);
-
-
-function newElement(){
-
-// 場所部分
+function newElement() {
   var li = document.createElement("li");
+
+  //入力された場所の読み込み
   var placeValue = document.getElementById("place").value;
-  var tp = document.createTextNode(placeValue + " ");
-  li.appendChild(tp);
-  if (placeValue == ""){
-    alert("場所書いて！");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-    document.getElementById("place").value = "";
+  document.getElementById("postedplase").textContent=placeValue;
 
-// 消去ボタン
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i=0; i<close.length; i++){
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-
-// 改行
-  var tb = document.createElement('br');
-  li.appendChild(tb);
-
-
-// コメント部分
+  //入力されたコメントの読み込み
   var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
+  document.getElementById("myUL").textContent=inputValue;
+
+  //コンテンツのクローン
+  var boxes = document.getElementById("main");
+  var clone = boxes.firstElementChild.cloneNode(true);
   if (inputValue == ""){
     alert("コメント書いて！");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
+  } else if(placeValue == ""){
+    alert("場所書いて！");
+  }else {
+  boxes.appendChild(clone);
+  document.getElementById("myUL").textContent="(例)  早く抜け出したい！＊ここの×ボタン、♡ボタンは押しちゃダメ！";
+  document.getElementById("postedplase").textContent="(例)  駒場キャンパス";
   document.getElementById("myInput").value = "";
-
-
+  document.getElementById("place").value = "";
+  }
 }
+
+  function ineElement(obj){
+    var iine = obj.parentElement;
+    var count = parseInt(iine.children[1].innerHTML);
+    iine.children[1].innerHTML = count + 1;
+  }
+
+  function deleteElement(obj) {
+    var contents = obj.parentElement;
+      contents.parentNode.removeChild(contents);
+  }
