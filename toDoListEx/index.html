@@ -21,12 +21,23 @@
 
 <!-- 入力部分 -->
 <div class="submit">
-
-  <input id="place" type="text" placeholder="場所">
-  <textarea id="myInput"  maxlength="150">コメント(最大150字)</textarea>
-
-  <input onclick="newElement()" class="submit-pin" type="button" value="追加">
-
+  <dl>
+    <dt>
+      <span>場所</span>
+    </dt>
+    <dd>
+      <input id="place" type="text" placeholder=" 場所">
+    </dd>
+    <dt>
+      <span>コメント</span>
+    </dt>
+    <dd>
+      <textarea id="myInput" type="text" maxlength="150" placeholder="コメント"></textarea>
+    </dd>
+  </dl>
+    <p>
+    <input onclick="newElement()" class="submit-pin" type="button" value="追加">
+  </p>
 </div>
 
 <!--入力が反映される部分 -->

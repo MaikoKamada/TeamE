@@ -16,9 +16,9 @@ ul{
 #ToDoList{
   position: relative;
   height:1000px;
-  width: 380px;
+  width: 500px;
   background:#EEEEEE;
-  border: #4c66a4 solid 6px;
+  border: #4c66a4  solid 6px;
   margin: 50px auto ;
   padding: 3% 5%;
   overflow: hidden;
@@ -48,9 +48,25 @@ title-icon{
 }
 /*入力部分*/
 .submit{
+  margin-top: 30px;
   margin-bottom: 15px;
-  height: 100px;
-  border-bottom: solid  #4682B4;
+  height: 200px;
+  border : 1px solid #cccccc;
+  border-radius : 7px;
+  box-shadow : 0 0 7px rgba( 0, 0, 0, 0.2 );
+  background: white;
+}
+
+dl{
+  height: 145px;
+  margin-bottom: 0px;
+}
+
+dt{
+  float: left;
+  width: 40px;
+  font-size: 10px;
+  padding-left:30px;
 }
 
 .submit:after {
@@ -59,42 +75,53 @@ title-icon{
     clear: both;
 }
 
-textarea{
-  margin-top:10px;
-  padding-right: 50px;
-  padding-bottom: 20px;
+#myInput{
+  text-align: left;
+  width: 300px;
+  height: 80px;
+  margin: 0px 50px 20px 30px;
   font-size:10px;
   border:1px solid #dee7ec;
   float: left;
+  background:#EEEEEE;
 }
 
+p{
+  width: 400px;
+  margin: 0px 50px 0px 50px;
+  border-top: 1px lightgray solid;
+}
 .submit-pin{
-  float: left;
   width: 40px;
-  margin-left: 10px;
-  margin-top: 40px;
   background: #dee7ec;
+  margin-top: 4px;
+  margin-left: 180px;
 }
 
 #place{
-  margin-top: 10px;
-  margin-right: 100px;
+  width: 300px;
+  margin: 0px 50px 20px 30px;
+  background:#EEEEEE;
+  border:1px solid #dee7ec;
 }
 /*リスト部分*/
 .contents{
-  height: 800px
-  margin-top: 60px;
+  width : 450px;
+  margin : 40px auto;
+  padding : 15px 0 20px;
+  border : 1px solid #cccccc;
+	border-radius : 7px;
+	box-shadow : 0 0 7px rgba( 0, 0, 0, 0.2 );
+  background: white;
 }
 
 .contentslist{
   height: 75px;
-  border-bottom:dotted;
-
 }
 #myUL{
   height: 30px;
   margin: 0px;
-  padding-left: 0px;
+  padding-left: 10px;
 }
 
 #postedplase{
@@ -102,12 +129,12 @@ textarea{
   display: inline;
   height: 15px;
   margin: 0px;
-  padding-left: 0px;
+  padding-left: 5px;
 }
 
 .i-ne{
   float: right;
-  padding-right: 5px;
+  padding-right: 20px;
 }
 
 #heart{
