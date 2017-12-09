@@ -1,0 +1,173 @@
+body{
+  font-family: "ヒラギノ角ゴ ProN W3";
+  width: 600px;
+  float: center;
+  color: #222222;
+}
+
+li{
+  list-style: none;
+}
+
+ul{
+  font-size: 12px;
+}
+
+#ToDoList{
+  position: relative;
+  height:1000px;
+  width: 380px;
+  background:#EEEEEE;
+  border: #4c66a4 solid 6px;
+  margin: 50px auto ;
+  padding: 3% 5%;
+  overflow: hidden;
+}
+
+/*タイトル部分 */
+.title{
+  background-color: blue;
+  color:#fff;
+  height: 120px;
+}
+
+.title-logo{
+  float: left;
+  font-size: 90px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+title-icon{
+  float:left;
+}
+.title-icon img{
+  float: right;
+  padding-right: 30px;
+  width: 64px;
+  height:64px;
+  padding-top:30px;
+}
+
+/*入力部分*/
+.submit{
+  margin-bottom: 15px;
+  height: 60px;
+}
+
+.text{
+  float: left;
+  width: 500px;
+  margin-bottom: : 20px;
+  margin-top: 20px;
+}
+
+textarea{
+  margin-top:10px;
+  padding-right: 50px;
+  padding-bottom: 20px;
+  font-size:10px;
+  border:1px solid #dee7ec;
+  float: left;
+}
+
+#myInput{
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 5px;
+  background: #dee7ec;
+}
+
+.submit-pin{
+  float: left;
+  width: 60px;
+  margin-left: 10px;
+  margin-top: 5px;
+  background: #dee7ec;
+}
+
+#place{
+  margin-top: 10px;
+  margin-right: 100px;
+}
+
+/*リスト部分*/
+.contents{
+  height: 800px
+  margin-top: 50px;
+}
+
+.contentslist{
+  height: 75px;
+  border-bottom:dotted;
+
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #66ffff;
+    font-size: 18px;
+    transition: 0.2s;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.contents li{
+  border-bottom: 2px solid #dee7ec;
+  font-size: 12px;
+  margin: 5px;
+}
+
+#myUL{
+  height: 30px;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+#postedplase{
+  border-bottom:solid #888888 thin;
+  display: inline;
+  height: 15px;
+  margin: 0px;
+  padding-left: 0px;
+}
+
+.i-ne{
+  float: right;
+  padding-right: 5px;
+}
+
+#heart{
+  width: 20px;
+  height: 20px;
+}
+
+#counter{
+  float: right;
+  padding-left: 0px;
+  margin: 0px;
+}

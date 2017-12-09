@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>ToDoList</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script type="text/javascript" src="index2.js"></script>
+  </head>
+
+<body>
+
+<div id="ToDoList">
+
+<!-- タイトル部分 -->
+<div class="title">
+  <div class="title-logo">行った場所リスト</div>
+  <div class="title-icon">
+  <img src="star.png" alt="">
+  </div>
+</div>
+
+<!-- 入力部分 -->
+<div class="submit">
+  <dl>
+    <dt>
+      <span>場所</span>
+    </dt>
+    <dd>
+      <input id="place" type="text" placeholder=" 場所">
+    </dd>
+    <dt>
+      <span>コメント</span>
+    </dt>
+    <dd>
+      <textarea id="myInput" type="text" maxlength="150" placeholder="コメント"></textarea>
+    </dd>
+  </dl>
+    <p>
+    <input onclick="newElement()" class="submit-pin" type="button" value="追加">
+  </p>
+</div>
+
+<!--入力が反映される部分 -->
+<div id="main">
+  <div  class="contents">
+    <ul id="postedplase">
+      (例)  駒場キャンパス
+    </ul>
+    <ul id="myUL">
+      (例)  早く抜け出したい！ ＊ここの×ボタン、♡ボタンは押しちゃダメ！
+    </ul>
+<!-- いいねボタン -->
+    <div class="i-ne">
+      <img id="heart" src="ecalic009_068.png" onclick="ineElement(this)"></img>
+      <ul id="counter">0</ul>
+    </div>
+<!-- 消去ボタン -->
+      <img id="delete" src="ecalic009_029.png" onclick="deleteElement(this)"></img>
+
+  </div>
+</div>
+
+</div>
+
+
+</body>
