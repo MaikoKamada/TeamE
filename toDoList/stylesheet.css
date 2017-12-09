@@ -109,4 +109,15 @@ title-icon{
 
 }
 
+.close{
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  float: right;
+}
 
+.check{
+  height: 18px;
+  width: 18px;
+  float: right;
+}
