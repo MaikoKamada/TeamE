@@ -1,10 +1,15 @@
 body{
-
-  font-family: "ヒラギノ角ゴ ProN W3";
+  margin: auto;
+  padding-top: 20px;
+  font-family: 'Vollkorn', serif;
   width: 600px;
   float: center;
-
+  background-image: url('paper.jpeg');
+  background-size: cover;
+  color: #212121;
 }
+
+
 
 li{
   list-style: none;
@@ -15,18 +20,17 @@ li{
   position: relative;
   height: 600px;
   width: 380px;
-  background: #FFF;
-  border: #4c66a4 solid 6px;
-  margin: 50px auto ;
-  padding: 3% 5%;
-  overflow: hidden;
+  background-color: rgba( 255, 255, 255, 0.4);
+  border: #212121 solid 2px;
+  padding: 20px;
+  margin: auto;
 }
+
+
 
 /*タイトル部分 */
 .title{
-  background-color: blue;
-  color:#fff;
-
+  color:#212121;
   height: 50px;
 
 }
@@ -34,7 +38,7 @@ li{
 .title-logo{
   float: left;
 
-  font-size: 20px;
+  font-size: 30px;
 
   margin-top: 15px;
   margin-left: 20px;
@@ -74,20 +78,28 @@ title-icon{
 
 .submit-pin{
   float: left;
-
   width: 40px;
   margin-left: 10px;
   margin-top: 20px;
+  color: #fff;
+  background-color: #414141;}
 
-  background: #dee7ec;
-}
+
 /*リスト部分*/
 .contents{
   height: 800px
   margin-top: 50px;
-
-  border-bottom: solid #dee7ec;
 }
+
+table{
+  border-bottom: solid #212121 1px;
+}
+
+.maintext{
+  width: 350px;
+}
+
+
 #myUL{
   margin-bottom: 0px;
   padding-left: 0px;
@@ -99,14 +111,12 @@ title-icon{
   float: right;
 }
 #deletebox{
+  margin-left: auto;
   height: 18px;
   width: 18px;
   float: right;
 }
+
 .contents li{
-
   font-size: 15px;
-
 }
-
-

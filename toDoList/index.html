@@ -5,6 +5,7 @@
     <title>ToDoList</title>
     <link rel="stylesheet" href="stylesheet.css">
     <script type="text/javascript" src="index.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
   </head>
 
 <body>
@@ -14,14 +15,14 @@
 <div class="title">
   <div class="title-logo">To do List</div>
   <div class="title-icon">
-  <img src="star.png" alt="">
+  <img src="star.png" alt="" onclick="openfile()">
   </div>
 </div>
 
 <div class="submit">
   <input id="myInput" class="text" placeholder="コメント">
 
-  <input onclick="newElement()" class="submit-pin" type="button" value="追加">
+  <input onclick="newElement()" class="submit-pin" type="button" value="add">
 
 </div>
 
@@ -30,18 +31,19 @@
 <!-- コンテンツを表形式にして、「文章　削除ボタン　チェックボタン」で構成しました*/ -->
 <!-- チェックついた画像もファイルの中にあります -->
 
+  <table id="main">
     <tr>
-      <td>(例)バイト先に電話</td>
-      <td><img src="ecalic009_029.png" id="deletebox"></td>
-      <td><img src="ecalic009_010.png" id="checkbox"></td>
+      <td class="maintext">ex.バイト先に電話</td>
+      <td><img src="ecalic009_029.png" id="deletebox" onclick="deleteElement(this)"></td>
+      <td><img src="ecalic009_010.png" id="checkbox" onclick="checkedElement(this)"></td>
   </ul>
 </div>
 </div>
 
-  <!-- ↓前のバージョン -->
+  <!-- ↓前のバージョン
     <li>バイト先に電話</li>
   </ul>
 </div>
-  <!-- ↑前のバージョン*/ -->
+  ↑前のバージョン*/ -->
 
 </body>

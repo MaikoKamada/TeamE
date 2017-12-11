@@ -1,6 +1,5 @@
 
 function newElement() {
-  var li = document.createElement("li");
 
   //入力された場所の読み込み
   var placeValue = document.getElementById("place").value;
@@ -25,14 +24,19 @@ function newElement() {
   document.getElementById("place").value = "";
   }
 }
-
+//いいねボタン
   function ineElement(obj){
     var iine = obj.parentElement;
     var count = parseInt(iine.children[1].innerHTML);
     iine.children[1].innerHTML = count + 1;
   }
-
+//消去ボタン
   function deleteElement(obj) {
     var contents = obj.parentElement;
       contents.parentNode.removeChild(contents);
+  }
+
+  //おまけ
+  function openfile(){
+    window.open("../ToDoList/index.html");
   }
