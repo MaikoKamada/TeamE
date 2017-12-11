@@ -3,6 +3,7 @@ body{
   width: 600px;
   float: center;
   color: #222222;
+  margin: auto;
 }
 
 li{
