@@ -20,7 +20,7 @@ li{
   position: relative;
   height: 600px;
   width: 380px;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba( 255, 255, 255, 0.4);
   border: #212121 solid 2px;
   padding: 20px;
   margin: auto;
