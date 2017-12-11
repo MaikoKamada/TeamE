@@ -29,6 +29,9 @@ list.addEventListener("click", function(ev) {
 //追加ボタンで追加
 function newElement(){
   var inputValue = document.getElementById("myInput").value;
+  if (inputValue == ""){
+    alert("なんか書けや");
+  } else {
   var main =   document.getElementById("main");
   var coment = main.rows[0].cells[0];
   coment.innerHTML = inputValue;
@@ -36,13 +39,12 @@ function newElement(){
   var boxes = document.getElementById("myUL");
   var clone = boxes.firstElementChild.cloneNode(true);
 
-  if (inputValue == ""){
-    alert("なんか書けや");
-  } else {
+
     boxes.appendChild(clone);
     coment.innerHTML="ex.バイト先に電話";
+    document.getElementById("myInput").value = "";
   }
-  document.getElementById("myInput").value = "";
+
 }
 
 function deleteElement(obj) {
