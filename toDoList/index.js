@@ -44,15 +44,16 @@ function newElement(){
     coment.innerHTML="ex.バイト先に電話";
     document.getElementById("myInput").value = "";
   }
-
 }
 
+//削除ボタン
 function deleteElement(obj) {
   var contents = obj.parentElement;
   var main = contents.parentElement;
     main.parentElement.remove();
 }
 
+//チェックボタン
 function checkedElement(obj){
   var img = new Array();
   img[0]= new Image();
@@ -64,6 +65,11 @@ function checkedElement(obj){
   }else{
     obj.src = img[0].src;
   }
+}
+
+//おまけ
+function openfile(){
+  window.open("../ToDoListEx/index.html");
 }
 
 /*
