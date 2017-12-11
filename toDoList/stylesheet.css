@@ -78,13 +78,13 @@ title-icon{
 
 .submit-pin{
   float: left;
-
   width: 40px;
   margin-left: 10px;
   margin-top: 20px;
+  color: #fff;
+  background-color: #414141;}
 
-  background: #dee7ec;
-}
+
 /*リスト部分*/
 .contents{
   height: 800px
