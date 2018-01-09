@@ -58,7 +58,7 @@
                 <ul class="list-group list-group-flush" style="background-color:#f0f8ff;">
                   <li class="list-group-item">投稿した数:3</li>
                   <li class="list-group-item">アイデアを教えた回数:2</li>
-                  <li class="list-group-item">いいねされた回数:0</li>
+                  <li class="list-group-item">いいねされた回数:<span id="ine1">0</span></li>
                 </ul>
               </div>
             </div>
@@ -124,7 +124,7 @@
                     <p class="replys ml-3 mt-2">BEE HOUSEってとこがオススメですよ！</p>
                     <small class="replysid text-muted ml-3">OL　東京</small>
                     <button class="icobutton icobutton-3-ccc-red  ml-5">
-                      <span class="fa fa-heart">0</span>
+                      <span class="fa fa-heart" onclick="count()"></span>
                     </button>
                   </div>
                   <!--↑ひとまとまりここまで-->
@@ -142,14 +142,14 @@
                     <p class="replys ml-3 mt-2">マグロ</p>
                     <small class="replysid text-muted ml-3">大学生　東京</small>
                     <button class="icobutton icobutton-3-ccc-red ml-5">
-                      <span class="fa fa-heart">0</span>
+                      <span class="fa fa-heart" onclick="count()"></span>
                     </button>
                   </div>
                   <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
                     <p class="replys ml-3 mt-2">茶碗蒸し</p>
                     <small class="replysid text-muted ml-3">高校生　愛知</small>
                     <button class="icobutton icobutton-3-ccc-red ml-5">
-                      <span class="fa fa-heart">0</span>
+                      <span class="fa fa-heart" onclick="count()"></span>
                     </button>
                   </div>
                 </div>
@@ -219,11 +219,11 @@
                 <!--↓投稿ひとまとまり-->
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
                   <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">4人で遊べるテーブルゲーム</h5>
-                    <small class="text-muted">残り10min</small>
+                    <h5 class="mb-1">トランプ　4人</h5>
+                    <small class="text-muted">残り25min</small>
                   </div>
-                  <p class="mb-1">男4人で盛り上がれるゲーム募集しまーす</p>
-                  <small class="text-muted">大学生　名古屋</small>
+                  <p class="mb-1">面白いゲーム募集！　1時間半くらい暇つぶししたい</p>
+                  <small class="text-muted">大学生　埼玉</small>
 
                   <object><a href="#reply" data-toggle="modal">
                   <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
@@ -232,48 +232,34 @@
 
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
                   <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">渋谷でオススメのレストラン</h5>
-                    <small class="text-muted">残り1h</small>
+                    <h5 class="mb-1">暇なので</h5>
+                    <small class="text-muted">残り5min</small>
                   </div>
-                  <p class="mb-1">予算は1000円以内で、イタリアンのいい店知っている人いませんか？</p>
-                    <small class="text-muted">OL　埼玉</small>
+                  <p class="mb-1">最初のコメント10個の中からどっかいこうと思います　神奈川か東京で</p>
+                    <small class="text-muted">フリーター　神奈川</small>
                     <object><a href="#reply" data-toggle="modal">
                     <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
                 </a>
-
-                <!--↓返信投稿ひとまとまり-->
-                <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
-                  <p class="replys ml-3 mt-2">BEE HOUSEってとこがオススメですよ！</p>
-                  <small class="replysid text-muted ml-3">OL　東京</small>
-                  <button class="icobutton icobutton-3-ccc-red  ml-5">
-                    <span class="fa fa-heart">0</span>
-                  </button>
-                </div>
-                <!--↑ひとまとまりここまで-->
                 <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
                   <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">くら寿司にいるんだけど</h5>
+                    <h5 class="mb-1">新宿のイタリアン</h5>
                     <small class="text-muted">残り10min</small>
                   </div>
-                  <p class="mb-1">コメント欄に来たネタ全部食べます</p>
+                  <p class="mb-1">デート向きのいい店募集です</p>
                     <small class="text-muted">大学生　東京</small>
                     <object><a href="#reply" data-toggle="modal">
                     <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
                 </a>
-                <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
-                  <p class="replys ml-3 mt-2">マグロ</p>
-                  <small class="replysid text-muted ml-3">大学生　東京</small>
-                  <button class="icobutton icobutton-3-ccc-red ml-5">
-                    <span class="fa fa-heart">0</span>
-                  </button>
-                </div>
-                <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
-                  <p class="replys ml-3 mt-2">茶碗蒸し</p>
-                  <small class="replysid text-muted ml-3">高校生　愛知</small>
-                  <button class="icobutton icobutton-3-ccc-red ml-5">
-                    <span class="fa fa-heart">0</span>
-                  </button>
-                </div>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">英単語暗記</h5>
+                    <small class="text-muted">残り50min</small>
+                  </div>
+                  <p class="mb-1">テストまであと1週間です、、効率的な暗記法教えてください、、</p>
+                    <small class="text-muted">高校生　千葉</small>
+                    <object><a href="#reply" data-toggle="modal">
+                    <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                </a>
               </div>
             </div>
 
@@ -317,7 +303,7 @@
                 <ul class="list-group list-group-flush" style="background-color:#f0f8ff;">
                   <li class="list-group-item">投稿した数:3</li>
                   <li class="list-group-item">アイデアを教えた回数:2</li>
-                  <li class="list-group-item">いいねされた回数:0</li>
+                  <li class="list-group-item">いいねされた回数:<span id="ine2">0</span></li>
                 </ul>
               </div>
             </div>

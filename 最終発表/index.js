@@ -18,3 +18,10 @@ $(function(){
     });
   });
 });
+
+function count(){
+  var val = $('#ine1').text();
+  var num = parseInt(val,10);
+  num++;
+  $('#ine1').text(num);
+}
