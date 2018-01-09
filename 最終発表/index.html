@@ -62,6 +62,7 @@
                 </ul>
               </div>
             </div>
+<<<<<<< HEAD
             <!--投稿部分-->
             <div class="w-75 float-right" >
               <div class="mb-3" style="background-color:#b0e0e6;">
@@ -154,6 +155,101 @@
                 </div>
               </div>
 
+=======
+
+            <!--投稿部分-->
+            <div class="w-75 float-right" >
+              <div class="mb-3" style="background-color:#b0e0e6;">
+                <button type="button" class="btn btn-info mb-3 ml-3 mt-3" data-toggle="collapse" data-target="#toukou">アイデア募集する！</button>
+                <div id="toukou" class="collapse">
+                  <div class="form-group">
+                    <input type="text" class="form-control w-75 ml-3 mb-2" id="title" placeholder="タイトル">
+                    <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="内容を入力"></textarea>
+                    <div class="form-row ml-3 mb-2">
+                      <div class="col-3">
+                        <input type="text" class="form-control" placeholder="募集時間">
+                      </div>
+                      <div class="col-3">
+                        <input type="text" class="form-control" placeholder="職業">
+                      </div>
+                      <div class="col-4">
+                        <input type="text" class="form-control" placeholder="地域">
+                      </div>
+                    </div>
+
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-outline-info">Submit</button>
+                      <p>　　　</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--タイムライン-->
+              <div id="timeline">
+                <div class="list-group" >
+                  <!--↓投稿ひとまとまり-->
+                  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">4人で遊べるテーブルゲーム</h5>
+                      <small class="text-muted">残り10min</small>
+                    </div>
+                    <p class="mb-1">男4人で盛り上がれるゲーム募集しまーす</p>
+                    <small class="text-muted">大学生　名古屋</small>
+
+                    <object><a href="#reply" data-toggle="modal">
+                      <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                  </a>
+                  <!--↑ひとまとまりここまで-->
+
+                  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">渋谷でオススメのレストラン</h5>
+                      <small class="text-muted">残り1h</small>
+                    </div>
+                    <p class="mb-1">予算は1000円以内で、イタリアンのいい店知っている人いませんか？</p>
+                    <small class="text-muted">OL　埼玉</small>
+                    <object><a href="#reply" data-toggle="modal">
+                      <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                  </a>
+
+                  <!--↓返信投稿ひとまとまり-->
+                  <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
+                    <p class="replys ml-3 mt-2">BEE HOUSEってとこがオススメですよ！</p>
+                    <small class="replysid text-muted ml-3">OL　東京</small>
+                    <button class="icobutton icobutton-3-ccc-red  ml-5">
+                      <span class="fa fa-heart">0</span>
+                    </button>
+                  </div>
+                  <!--↑ひとまとまりここまで-->
+                  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">くら寿司にいるんだけど</h5>
+                      <small class="text-muted">残り10min</small>
+                    </div>
+                    <p class="mb-1">コメント欄に来たネタ全部食べます</p>
+                    <small class="text-muted">大学生　東京</small>
+                    <object><a href="#reply" data-toggle="modal">
+                      <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                  </a>
+                  <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
+                    <p class="replys ml-3 mt-2">マグロ</p>
+                    <small class="replysid text-muted ml-3">大学生　東京</small>
+                    <button class="icobutton icobutton-3-ccc-red ml-5">
+                      <span class="fa fa-heart">0</span>
+                    </button>
+                  </div>
+                  <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
+                    <p class="replys ml-3 mt-2">茶碗蒸し</p>
+                    <small class="replysid text-muted ml-3">高校生　愛知</small>
+                    <button class="icobutton icobutton-3-ccc-red ml-5">
+                      <span class="fa fa-heart">0</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+>>>>>>> f21599583045d6ae62aac437447019bd4249b1fe
               <!--返信画面-->
               <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="reply" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -180,6 +276,10 @@
       </main>
     </div>
     <!--HOMEタブ中身ここまで--->
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21599583045d6ae62aac437447019bd4249b1fe
     <!--募集中タブ中身--->
     <div class="ChangeElem_Panel">
       <main>
@@ -202,6 +302,10 @@
                       <input type="text" class="form-control" placeholder="地域">
                     </div>
                   </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21599583045d6ae62aac437447019bd4249b1fe
                   <div class="col-sm-10">
                     <button type="submit" class="btn btn-outline-info">Submit</button>
                     <p>　　　</p>
@@ -209,6 +313,10 @@
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21599583045d6ae62aac437447019bd4249b1fe
             <!--タイムライン-->
             <div id="timeline">
               <div class="list-group" >
@@ -298,6 +406,10 @@
       </main>
     </div>
     <!--募集中タブ中身ここまで--->
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21599583045d6ae62aac437447019bd4249b1fe
     <!--アカウントタブ中身ここから--->
     <div class="ChangeElem_Panel">
       <main>
@@ -321,6 +433,10 @@
       </main>
     </div>
     <!--アカウントタブ中身ここまで--->
+<<<<<<< HEAD
+=======
+
+>>>>>>> f21599583045d6ae62aac437447019bd4249b1fe
     <footer>
     </footer>
     <!-- Optional JavaScript -->
