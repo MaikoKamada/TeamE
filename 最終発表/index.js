@@ -4,7 +4,7 @@ $(function(){
   $('.ChangeElem_Panel').hide();
   $('.ChangeElem_Panel').eq(0).show();
   $('.nav-link').eq(0).addClass('is-active');
-
+  $('.nav-link').eq(0).css("color","#000000");
   /*クリックイベント*/
   $('.nav-link').each(function () {
     $(this).on('click', function () {
@@ -13,6 +13,8 @@ $(function(){
       $(this).addClass('is-active');
       $('.ChangeElem_Panel').hide();
       $('.ChangeElem_Panel').eq(index).show();
+      $('.nav-link').css("color","");
+      $('.is-active').css("color","#000000");
     });
   });
 });
