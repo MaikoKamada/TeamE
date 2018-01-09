@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>KAMIDEA!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- animocon CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='animocons.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+
+  </head>
+  <body class="bg-light">
+    <header class="mb-5">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#fff;">
+        <a class="navbar-brand" href="#">KAMIDEA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">募集中</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                アカウント
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">プロフィール</a>
+                <a class="dropdown-item" href="#">編集</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">ログアウト</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="気になるワード" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="w-25 float-left" style="height:200px;">
+          <div class="card mr-2" style="background:#f0f8ff;">
+      <img class="card-img-top rounded-circle mt-2 " src="{{ url_for('static', filename='icon.jpg') }}" alt="acountimg">
+      <div class="card-body">
+        <h5 class="card-title">HOME</h5>
+      </div>
+      <ul class="list-group list-group-flush" style="background-color:#f0f8ff;">
+        <li class="list-group-item">投稿した数:3</li>
+        <li class="list-group-item">アイデアを教えた回数:2</li>
+        <li class="list-group-item">いいねされた回数:0</li>
+      </ul>
+
+    </div>
+    </div>
+
+
+    <!--投稿部分-->
+    <div class="w-75 float-right" >
+    <form action="/add" method="get">
+      <div class="mb-3" style="background-color:#b0e0e6;">
+      <button type="button" class="btn btn-info mb-3 ml-3 mt-3" data-toggle="collapse" data-target="#toukou">アイデア募集する！</button>
+      <div id="toukou" class="collapse">
+        <div class="form-group">
+           <input type="text" name="title" class="form-control w-75 ml-3 mb-2" id="title" placeholder="タイトル">
+     <textarea name="contents" class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="内容を入力"></textarea>
+
+    <div class="form-row ml-3 mb-2">
+      <div class="col-3">
+        <input type="text" name="timespan" class="form-control" placeholder="募集時間">
+      </div>
+      <div class="col-3">
+        <input type="text" name="occupation" class="form-control" placeholder="職業">
+      </div>
+      <div class="col-4">
+        <input type="text" name="region" class="form-control" placeholder="地域">
+      </div>
+    </div>
+
+     <div class="col-sm-10">
+     <button type="submit" class="btn btn-outline-info">Submit</button>
+     <p>　　　</p>
+   </div>
+   </div>
+      </div>
+    </div>
+  </form>
+
+    <!--タイムライン-->
+    <div id="timeline">
+      <div class="list-group" >
+
+        {% for post in posts %}
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{  post.title  }}</h5>
+            <small class="text-muted">{{  post.timespan  }}</small>
+            </div>
+            <p class="mb-1">{{  post.contents  }}</p>
+              <small class="text-muted">{{  post.occupation }}  {{  post.rgion  }}</small>
+
+            <object><a href="#reply" data-toggle="modal">
+                        <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+          </a>
+        {% endfor %}
+
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+           <div class="d-flex w-100 justify-content-between">
+             <h5 class="mb-1">4人で遊べるテーブルゲーム</h5>
+             <small class="text-muted">残り10min</small>
+           </div>
+           <p class="mb-1">男4人で盛り上がれるゲーム募集しまーす</p>
+             <small class="text-muted">大学生　名古屋</small>
+
+           <object><a href="#reply" data-toggle="modal">
+                      <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+         </a>
+
+         <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">渋谷でオススメのレストラン</h5>
+              <small class="text-muted">残り1h</small>
+            </div>
+            <p class="mb-1">予算は1000円以内で、イタリアンのいい店知っている人いませんか？</p>
+             <small class="text-muted">OL　埼玉</small>
+             <object><a href="#reply" data-toggle="modal">
+                        <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+          </a>
+          <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
+                 <p class="replys ml-3 mt-2">BEE HOUSEってとこがオススメですよ！</p>
+                  <small class="replysid text-muted ml-3">OL　東京</small>
+                  <button class="icobutton icobutton-3-ccc-red  ml-5">
+                    <span class="fa fa-heart"></span>
+                  </button>
+          </div>
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+             <div class="d-flex w-100 justify-content-between">
+               <h5 class="mb-1">くら寿司にいるんだけど</h5>
+               <small class="text-muted">残り10min</small>
+             </div>
+             <p class="mb-1">コメント欄に来たネタ全部食べます</p>
+               <small class="text-muted">大学生　東京</small>
+               <object><a href="#reply" data-toggle="modal">
+                          <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+           </a>
+           <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
+                  <p class="replys ml-3 mt-2">マグロ</p>
+                   <small class="replysid text-muted ml-3">大学生　東京</small>
+                   <button class="icobutton icobutton-3-ccc-red ml-5">
+                     <span class="fa fa-heart"></span>
+                   </button>
+           </div>
+           <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
+                  <p class="replys ml-3 mt-2">茶碗蒸し</p>
+                   <small class="replysid text-muted ml-3">高校生　愛知</small>
+                   <button class="icobutton icobutton-3-ccc-red ml-5">
+                     <span class="fa fa-heart"></span>
+                   </button>
+           </div>
+    </div>
+  </div>
+  <!--返信画面-->
+  <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="reply" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="replyLabel">アイデアを伝える</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+       <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="アイデアを入力"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary">送信</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    </main>
+    <footer>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <!-- animocon のjs -->
+    <!-- <script src="animocons.min.js"></script> -->
+  </body>
+</html>
