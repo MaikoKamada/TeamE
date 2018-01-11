@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!-- animocon CSS -->
-    <link rel="stylesheet" type="text/css" href="animocons.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='animocons.min.css') }}">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
 
     <script type="text/javascript" src="index.js"></script>
@@ -51,36 +51,35 @@
           <div class="row-fluid">
             <div class="w-25 float-left" style="height:200px;">
               <div class="card mr-2" style="background:#f0f8ff;">
-                <img class="card-img-top rounded-circle mt-2 " src="icon.jpg" alt="acountimg">
+                <img class="card-img-top rounded-circle mt-2 " src="/static/icon.jpg" alt="acountimg">
                 <div class="card-body">
                   <h5 class="card-title">HOME</h5>
                 </div>
                 <ul class="list-group list-group-flush" style="background-color:#f0f8ff;">
                   <li class="list-group-item">投稿した数:3</li>
                   <li class="list-group-item">アイデアを教えた回数:2</li>
-                  <li class="list-group-item">いいねされた回数:<span id="ine1">0</span></li>
+                  <li class="list-group-item">いいねされた回数:0</li>
                 </ul>
               </div>
             </div>
-
-
             <!--投稿部分-->
             <div class="w-75 float-right" >
+              <form action="/add" method="get">
               <div class="mb-3" style="background-color:#b0e0e6;">
                 <button type="button" class="btn btn-info mb-3 ml-3 mt-3" data-toggle="collapse" data-target="#toukou">アイデア募集する！</button>
                 <div id="toukou" class="collapse">
                   <div class="form-group">
-                    <input type="text" class="form-control w-75 ml-3 mb-2" id="title" placeholder="タイトル">
-                    <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="内容を入力"></textarea>
+                    <input type="text" name="title" class="form-control w-75 ml-3 mb-2" id="title" placeholder="タイトル">
+                    <textarea name="contents" class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="内容を入力"></textarea>
                     <div class="form-row ml-3 mb-2">
                       <div class="col-3">
-                        <input type="text" class="form-control" placeholder="募集時間">
+                        <input name="timespan" type="text" class="form-control" placeholder="募集時間">
                       </div>
                       <div class="col-3">
-                        <input type="text" class="form-control" placeholder="職業">
+                        <input name="occupation" type="text" class="form-control" placeholder="職業">
                       </div>
                       <div class="col-4">
-                        <input type="text" class="form-control" placeholder="地域">
+                        <input name="region" type="text" class="form-control" placeholder="地域">
                       </div>
                     </div>
 
@@ -91,10 +90,36 @@
                   </div>
                 </div>
               </div>
+              </form>
 
               <!--タイムライン-->
               <div id="timeline">
                 <div class="list-group" >
+                  <!--投稿 -->
+                  {% for post in posts %}
+                    <!--アイデア投稿-->
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{  post["idea"]["title"]  }}</h5>
+                        <small class="text-muted">{{  post["idea"]["timespan"]  }}</small>
+                      </div>
+                      <p class="mb-1">{{  post["idea"]["contents"]  }}</p>
+                      <small class="text-muted">{{  post["idea"]["occupation"] }}  {{  post["idea"]["region"]  }}</small>
+
+                      <object><a href="#reply" data-toggle="modal">
+                        <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                    </a>
+                    <!-- 返信表示 -->
+                    {% if post["reply"] %}
+                    <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
+                      <p class="replys ml-3 mt-2">{{  post["reply"]  }}</p>
+                      <!-- <small class="replysid text-muted ml-3">OL　東京</small> -->
+                      <button class="icobutton icobutton-3-ccc-red  ml-5">
+                        <span class="fa fa-heart">0</span>
+                      </button>
+                    </div>
+                    {% endif %}
+                  {% endfor %}
                   <!--↓投稿ひとまとまり-->
                   <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
                     <div class="d-flex w-100 justify-content-between">
@@ -125,7 +150,7 @@
                     <p class="replys ml-3 mt-2">BEE HOUSEってとこがオススメですよ！</p>
                     <small class="replysid text-muted ml-3">OL　東京</small>
                     <button class="icobutton icobutton-3-ccc-red  ml-5">
-                      <span class="fa fa-heart" onclick="count()"></span>
+                      <span class="fa fa-heart">0</span>
                     </button>
                   </div>
                   <!--↑ひとまとまりここまで-->
@@ -143,14 +168,14 @@
                     <p class="replys ml-3 mt-2">マグロ</p>
                     <small class="replysid text-muted ml-3">大学生　東京</small>
                     <button class="icobutton icobutton-3-ccc-red ml-5">
-                      <span class="fa fa-heart" onclick="count()"></span>
+                      <span class="fa fa-heart">0</span>
                     </button>
                   </div>
                   <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
                     <p class="replys ml-3 mt-2">茶碗蒸し</p>
                     <small class="replysid text-muted ml-3">高校生　愛知</small>
                     <button class="icobutton icobutton-3-ccc-red ml-5">
-                      <span class="fa fa-heart" onclick="count()"></span>
+                      <span class="fa fa-heart">0</span>
                     </button>
                   </div>
                 </div>
@@ -167,7 +192,9 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="アイデアを入力"></textarea>
+                    <form action="/reply" method="get">
+                      <textarea name="reply" class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="アイデアを入力"></textarea>
+                    </form>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -182,159 +209,6 @@
       </main>
     </div>
     <!--HOMEタブ中身ここまで--->
-
-    <!--募集中タブ中身--->
-    <div class="ChangeElem_Panel">
-      <main>
-        <div class="container-fluid">
-          <div class="row-fluid">
-            <div class="mb-3" style="background-color:#b0e0e6;">
-              <button type="button" class="btn btn-info mb-3 ml-3 mt-3" data-toggle="collapse" data-target="#toukou">アイデア募集する！</button>
-              <div id="toukou" class="collapse">
-                <div class="form-group">
-                  <input type="text" class="form-control w-75 ml-3 mb-2" id="title" placeholder="タイトル">
-                  <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="内容を入力"></textarea>
-                  <div class="form-row ml-3 mb-2">
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder="募集時間">
-                    </div>
-                    <div class="col-3">
-                      <input type="text" class="form-control" placeholder="職業">
-                    </div>
-                    <div class="col-4">
-                      <input type="text" class="form-control" placeholder="地域">
-                    </div>
-                  </div>
-
-                  <div class="col-sm-10">
-                    <button type="submit" class="btn btn-outline-info">Submit</button>
-                    <p>　　　</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--タイムライン-->
-            <div id="timeline">
-              <div class="list-group" >
-                <!--↓投稿ひとまとまり-->
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">トランプ　4人</h5>
-                    <small class="text-muted">残り25min</small>
-                  </div>
-                  <p class="mb-1">面白いゲーム募集！　1時間半くらい暇つぶししたい</p>
-                  <small class="text-muted">大学生　埼玉</small>
-
-                  <object><a href="#reply" data-toggle="modal">
-                  <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
-                </a>
-                <!--↑ひとまとまりここまで-->
-
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">暇なので</h5>
-                    <small class="text-muted">残り5min</small>
-                  </div>
-                  <p class="mb-1">最初のコメント10個の中からどっかいこうと思います　神奈川か東京で</p>
-                    <small class="text-muted">フリーター　神奈川</small>
-                    <object><a href="#reply" data-toggle="modal">
-                    <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">新宿のイタリアン</h5>
-                    <small class="text-muted">残り10min</small>
-                  </div>
-                  <p class="mb-1">デート向きのいい店募集です</p>
-                    <small class="text-muted">大学生　東京</small>
-                    <object><a href="#reply" data-toggle="modal">
-                    <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">英単語暗記</h5>
-                    <small class="text-muted">残り50min</small>
-                  </div>
-                  <p class="mb-1">テストまであと1週間です、、効率的な暗記法教えてください、、</p>
-                    <small class="text-muted">高校生　千葉</small>
-                    <object><a href="#reply" data-toggle="modal">
-                    <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
-                </a>
-              </div>
-            </div>
-
-            <!--返信画面-->
-            <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="reply" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="replyLabel">アイデアを伝える</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="アイデアを入力"></textarea>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">送信</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--称号画面-->
-            <div class="modal fade text-center bg-success" id="award" tabindex="-1" role="dialog" aria-labelledby="award" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="awardLabel">称号を手に入れた！</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <img class="card-img-top rounded-circle mt-2 " src="award.png" alt="award">
-                    <h5 class="modal-title" id="awardLabel">アイデアマン</h5>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-    <!--募集中タブ中身ここまで--->
-
-    <!--アカウントタブ中身ここから--->
-    <div class="ChangeElem_Panel">
-      <main>
-        <div class="container-fluid">
-          <div class="row-fluid">
-            <div class="w-25 float-left" style="height:200px;">
-              <div class="card mr-2" style="background:#f0f8ff;">
-                <img class="card-img-top rounded-circle mt-2 " src="icon.jpg" alt="acountimg">
-                <div class="card-body">
-                  <h5 class="card-title">HOME</h5>
-                </div>
-                <ul class="list-group list-group-flush" style="background-color:#f0f8ff;">
-                  <li class="list-group-item">投稿した数:3</li>
-                  <li class="list-group-item">アイデアを教えた回数:2</li>
-                  <li class="list-group-item">いいねされた回数:<span id="ine2">0</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-    <!--アカウントタブ中身ここまで--->
-
     <footer>
     </footer>
     <!-- Optional JavaScript -->
@@ -343,7 +217,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <!-- animocon のjs -->
-    <script src="animocons.min.js"></script>
+    <script src="/static/animocons.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
