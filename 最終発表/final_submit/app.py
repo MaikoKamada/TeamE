@@ -35,10 +35,6 @@ def add_reply():
     db.update({"reply":request.args.get("reply")})
     return index()
 
-@app.route("/count")
-def add_count():
-    i += 1
-    return index()
 
 # jsonファイル内のデータを消去する
 @app.route("/reset")
