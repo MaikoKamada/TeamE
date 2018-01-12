@@ -97,23 +97,23 @@
               <div id="timeline">
                 <div class="list-group" >
                   <!--投稿 -->
-                  {% for post in posts %}
+                  {% for i in range(1, n+1) %}
                     <!--アイデア投稿-->
                     <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">{{  post["idea"]["title"]  }}</h5>
-                        <small class="text-muted">{{  post["idea"]["timespan"]  }}</small>
+                        <h5 class="mb-1">{{  posts[-i]["idea"]["title"]  }}</h5>
+                        <small class="text-muted">{{  posts[-i]["idea"]["timespan"]  }}</small>
                       </div>
-                      <p class="mb-1">{{  post["idea"]["contents"]  }}</p>
-                      <small class="text-muted">{{  post["idea"]["occupation"] }}  {{  post["idea"]["region"]  }}</small>
+                      <p class="mb-1">{{  posts[-i]["idea"]["contents"]  }}</p>
+                      <small class="text-muted">{{  posts[-i]["idea"]["occupation"] }}  {{  posts[-i]["idea"]["region"]  }}</small>
 
                       <object><a href="#reply" data-toggle="modal">
                         <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
                     </a>
                     <!-- 返信表示 -->
-                    {% if post["reply"] %}
+                    {% if posts[-i]["reply"] %}
                     <div class="replylist border border-secondary rounded mt-1 ml-2 mb-1 bg-white">
-                      <p class="replys ml-3 mt-2">{{  post["reply"]  }}</p>
+                      <p class="replys ml-3 mt-2">{{  posts[-i]["reply"]  }}</p>
                       <!-- <small class="replysid text-muted ml-3">OL　東京</small> -->
                       <button class="icobutton icobutton-3-ccc-red  ml-5">
                         <span class="fa fa-heart" onclick="count()"></span>
@@ -204,7 +204,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <!--称号画面-->
               <div class="modal fade text-center bg-success" id="award" tabindex="-1" role="dialog" aria-labelledby="award" aria-hidden="true">
                 <div class="modal-dialog" role="document">
