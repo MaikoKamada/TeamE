@@ -24,4 +24,5 @@ function count(){
   var num = parseInt(val,10);
   num++;
   $('#ine1').text(num);
+  $('#ine2').text(num);
 }
