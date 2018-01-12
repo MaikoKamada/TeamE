@@ -210,6 +210,138 @@
       </main>
     </div>
     <!--HOMEタブ中身ここまで--->
+
+    <!--募集中タブ中身--->
+    <div class="ChangeElem_Panel">
+      <main>
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="mb-3" style="background-color:#b0e0e6;">
+              <button type="button" class="btn btn-info mb-3 ml-3 mt-3" data-toggle="collapse" data-target="#toukou">アイデア募集する！</button>
+              <div id="toukou" class="collapse">
+                <div class="form-group">
+                  <input type="text" class="form-control w-75 ml-3 mb-2" id="title" placeholder="タイトル">
+                  <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="内容を入力"></textarea>
+                  <div class="form-row ml-3 mb-2">
+                    <div class="col-3">
+                      <input type="text" class="form-control" placeholder="募集時間">
+                    </div>
+                    <div class="col-3">
+                      <input type="text" class="form-control" placeholder="職業">
+                    </div>
+                    <div class="col-4">
+                      <input type="text" class="form-control" placeholder="地域">
+                    </div>
+                  </div>
+
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-outline-info">Submit</button>
+                    <p>　　　</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--タイムライン-->
+            <div id="timeline">
+              <div class="list-group" >
+                <!--↓投稿ひとまとまり-->
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">トランプ　4人</h5>
+                    <small class="text-muted">残り25min</small>
+                  </div>
+                  <p class="mb-1">面白いゲーム募集！　1時間半くらい暇つぶししたい</p>
+                  <small class="text-muted">大学生　埼玉</small>
+
+                  <object><a href="#reply" data-toggle="modal">
+                  <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                </a>
+                <!--↑ひとまとまりここまで-->
+
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">暇なので</h5>
+                    <small class="text-muted">残り5min</small>
+                  </div>
+                  <p class="mb-1">最初のコメント10個の中からどっかいこうと思います　神奈川か東京で</p>
+                    <small class="text-muted">フリーター　神奈川</small>
+                    <object><a href="#reply" data-toggle="modal">
+                    <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">新宿のイタリアン</h5>
+                    <small class="text-muted">残り10min</small>
+                  </div>
+                  <p class="mb-1">デート向きのいい店募集です</p>
+                    <small class="text-muted">大学生　東京</small>
+                    <object><a href="#reply" data-toggle="modal">
+                    <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-3">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">英単語暗記</h5>
+                    <small class="text-muted">残り50min</small>
+                  </div>
+                  <p class="mb-1">テストまであと1週間です、、効率的な暗記法教えてください、、</p>
+                    <small class="text-muted">高校生　千葉</small>
+                    <object><a href="#reply" data-toggle="modal">
+                    <i class="fa fa-paper-plane float-right" aria-hidden="true"></i></a></object>
+                </a>
+              </div>
+            </div>
+
+            <!--返信画面-->
+            <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="reply" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="replyLabel">アイデアを伝える</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <textarea class="form-control w-75 ml-3 mb-3 h-75 " id="ideatextarea" rows="3" placeholder="アイデアを入力"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">送信</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!--募集中タブ中身ここまで--->
+
+    <!--アカウントタブ中身ここから--->
+    <div class="ChangeElem_Panel">
+      <main>
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="w-25 float-left" style="height:200px;">
+              <div class="card mr-2" style="background:#f0f8ff;">
+                <img class="card-img-top rounded-circle mt-2 " src="icon.jpg" alt="acountimg">
+                <div class="card-body">
+                  <h5 class="card-title">HOME</h5>
+                </div>
+                <ul class="list-group list-group-flush" style="background-color:#f0f8ff;">
+                  <li class="list-group-item">投稿した数:3</li>
+                  <li class="list-group-item">アイデアを教えた回数:2</li>
+                  <li class="list-group-item">いいねされた回数:<span id="ine2">0</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!--アカウントタブ中身ここまで--->
+
     <footer>
     </footer>
     <!-- Optional JavaScript -->
